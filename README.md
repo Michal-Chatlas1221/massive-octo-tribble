@@ -1,2 +1,3 @@
 # massive-octo-tribble
-Projekt na grafikę 
+# Projekt na grafikę
+ 
