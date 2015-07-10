@@ -18,5 +18,13 @@
     <ClCompile Include="main_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="loadShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="loadShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

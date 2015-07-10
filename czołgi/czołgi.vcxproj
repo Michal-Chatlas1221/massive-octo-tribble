@@ -80,7 +80,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="loadShader.cpp" />
     <ClCompile Include="main_file.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="loadShader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

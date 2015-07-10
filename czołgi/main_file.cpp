@@ -5,19 +5,24 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include <stdio.h>
+#include "loadShader.h"
 
 glm::mat4 V;
 glm::mat4 P;
 glm::mat4 M;
+
 
 //Trójk¹t 3 wierzcho³ki
 static const GLfloat g_vertex_buffer_data[] = {
 	-1.0f, -1.0f, 0.0f,
 	1.0f, -1.0f, 0.0f,
 	0.0f, 1.0f, 0.0f,
-};
+};
+
+GLuint programID;
 
 void drawObject(){
+	programID = load("vertexshader.txt", "fragmentshader.txt");
 	GLuint vertexbuffer;
 	glGenBuffers(1, &vertexbuffer);
 	glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
@@ -34,6 +39,9 @@ void drawObject(){
 		);
 
 	// Draw the triangle !
+	
+	//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glUseProgram(programID);
 	glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
 
 	glDisableVertexAttribArray(0);
@@ -79,6 +87,7 @@ void initializeGLEW() {
 
 
 int main(int argc, char** argv) {
+	
 	initializeGLUT(&argc, argv);
 	initializeGLEW();
 	//Kod inicjuj¹cy tutaj
